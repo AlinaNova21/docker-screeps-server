@@ -14,6 +14,7 @@ export MOD_DIR=${MOD_DIR:-/screeps/mods}
 export GAME_PORT=${GAME_PORT:-21025}
 export GAME_HOST=${GAME_HOST:-0.0.0.0}
 export CLI_PORT=${CLI_PORT:-21026}
+export CLI_HOST=${CLI_HOST:-0.0.0.0}
 export STORAGE_PORT=${STORAGE_PORT:-21027}
 export STORAGE_HOST=${STORAGE_HOST:-localhost}
 
