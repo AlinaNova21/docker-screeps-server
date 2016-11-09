@@ -9,7 +9,7 @@ ENV AUTOUPDATE=1 \
     STORAGE_PORT=21027 \
     STORAGE_HOST=localhost
 
-RUN npm install -g screeps
+RUN npm install -g screeps @screeps/storage @screeps/backend @screeps/common @screeps/engine @screeps/driver
 EXPOSE 21025 21026
 ADD entrypoint.sh /entrypoint.sh
 WORKDIR /screeps
