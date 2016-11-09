@@ -1,11 +1,9 @@
 #!/bin/bash
-pid=0
 term_handler() {
   echo "Caught SIGTERM signal!" 
   pkill -9 node 2>/dev/null
   exit 143; # 128 + 15 -- SIGTERM
 }
-
 
 export AUTOUPDATE=${AUTOUPDATE:-1}
 export DB_PATH=${DB_PATH:-/screeps/db.json}
@@ -25,4 +23,6 @@ trap term_handler SIGTERM
 [[ "$2" == "start" ]] && [ ! -f /screeps/.screepsrc ] && echo "No .screepsrc found, please run 'screeps init' in your data directory" && exit 1
 echo Launching $@
 #env
-/app/node_modules/.bin/$@
+/app/node_modules/.bin/$@ &
+pid=$!
+wait "$pid"
