@@ -8,7 +8,8 @@ term_handler() {
 export AUTOUPDATE=${AUTOUPDATE:-1}
 export DB_PATH=${DB_PATH:-/screeps/db.json}
 export ASSET_DIR=${ASSET_DIR:-/screeps/assets}
-export MOD_DIR=${MOD_DIR:-/screeps/mods}
+export MOD_FILE=${MOD_FILE:-/screeps/mods/mods.json}
+export MODFILE=${MODFILE:-${MOD_FILE}}
 export GAME_PORT=${GAME_PORT:-21025}
 export GAME_HOST=${GAME_HOST:-0.0.0.0}
 export CLI_PORT=${CLI_PORT:-21026}
