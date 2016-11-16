@@ -17,6 +17,7 @@ export CLI_PORT=${CLI_PORT:-21026}
 export CLI_HOST=${CLI_HOST:-0.0.0.0}
 export STORAGE_PORT=${STORAGE_PORT:-21027}
 export STORAGE_HOST=${STORAGE_HOST:-localhost}
+export DRIVER_MODULE="@screeps/driver"
 
 trap term_handler SIGTERM
 
