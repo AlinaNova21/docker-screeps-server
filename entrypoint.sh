@@ -5,6 +5,7 @@ term_handler() {
   exit 143; # 128 + 15 -- SIGTERM
 }
 
+export SERVER_INIT=${SERVER_INIT:-0}
 export AUTOUPDATE=${AUTOUPDATE:-1}
 export DB_PATH=${DB_PATH:-/screeps/db.json}
 export ASSET_DIR=${ASSET_DIR:-/screeps/assets}
@@ -20,6 +21,12 @@ export STORAGE_HOST=${STORAGE_HOST:-localhost}
 trap term_handler SIGTERM
 
 [[ "$AUTOUPDATE" == "1" ]] && npm update screeps
+
+cd /screeps/
+if [[ "$SERVER_INIT" == "1" ]]; then 
+    /app/node_modules/.bin/screeps init
+    exit
+fi
 
 [[ "$2" == "start" ]] && [ ! -f /screeps/.screepsrc ] && echo "No .screepsrc found, please run 'screeps init' in your data directory" && exit 1
 echo Launching $@
