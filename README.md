@@ -4,7 +4,7 @@
     
 First init your server directory:
 
-```docker run --rm -it -v $PWD:/screeps -e"SERVER_INIT=1" ags131/screeps-server```
+```docker run --rm -it -v $PWD:/screeps -e "SERVER_INIT=1" ags131/screeps-server```
 
 Then start the Server:
 
