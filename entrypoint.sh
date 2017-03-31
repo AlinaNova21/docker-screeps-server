@@ -17,21 +17,21 @@ export CLI_PORT=${CLI_PORT:-21026}
 export CLI_HOST=${CLI_HOST:-0.0.0.0}
 export STORAGE_PORT=${STORAGE_PORT:-21027}
 export STORAGE_HOST=${STORAGE_HOST:-localhost}
-export DRIVER_MODULE="@screeps/driver"
+export DRIVER_MODULE=${DRIVER_MODULE:-"@screeps/driver"}
 
 trap term_handler SIGTERM
 
-[[ "$AUTOUPDATE" == "1" ]] && npm update screeps
+[[ "$AUTOUPDATE" == "1" ]] && npm update screeps	
 
 cd /screeps/
 if [[ "$SERVER_INIT" == "1" ]]; then 
-    /app/node_modules/.bin/screeps init
+    node /app/node_modules/.bin/screeps init
     exit
 fi
 
 [[ "$2" == "start" ]] && [ ! -f /screeps/.screepsrc ] && echo "No .screepsrc found, please run 'screeps init' in your data directory" && exit 1
 echo Launching $@
 #env
-/app/node_modules/.bin/$@ &
+node /app/node_modules/.bin/$@ &
 pid=$!
 wait "$pid"
