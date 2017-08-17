@@ -1,4 +1,4 @@
-FROM node:6.6
+FROM node:8
 VOLUME /screeps
 WORKDIR /app
 RUN npm install screeps
