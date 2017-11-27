@@ -1,7 +1,7 @@
 FROM node:8
 VOLUME /screeps
 WORKDIR /app
-ARG SCREEPS_VERSION
+ENV SCREEPS_VERSION 2.10.0
 ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
 	MODFILE=/screeps/mods.json GAME_PORT=21025 \
 	GAME_HOST=0.0.0.0 CLI_PORT=21026 CLI_HOST=0.0.0.0 \
