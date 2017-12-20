@@ -10,5 +10,5 @@ ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
 RUN yarn add screeps@$SCREEPS_VERSION
 RUN ln -s /app/node_modules/.bin/* /usr/local/bin/
 WORKDIR /screeps
-ENTRYPOINT [""]
+ENTRYPOINT ["/bin/sh -c"]
 CMD ["screeps","start"]
