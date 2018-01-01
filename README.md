@@ -18,9 +18,12 @@ I moved the repo to quay.io for automated updates, the dockerhub version is now 
 3. Done! Your server should now be accessible.
 
 ### Mods
-Mods can be installed by running  
+Mods can be installed by running:
 ```docker run --rm -v $PWD:/screeps quay.io/ags131/screeps-server yarn add screepsmod-auth```
 
+### CLI
+The CLI can be accessed by running:
+```docker exec -it screeps-server screeps cli```
 
 ## Stopping and starting the server
 Stop:
