@@ -1,0 +1,45 @@
+version: '2'
+services:
+  backend:
+    image: quay.io/ags131/screeps-server
+    command: screeps-backend
+    env_file:
+    - ./common.env
+    - ./backend.env
+    volumes:
+    - ./server:/screeps
+    ports:
+    - 21025:21025
+  engine-main:
+    image: quay.io/ags131/screeps-server
+    command: screeps-engine-main
+    env_file:
+    - ./common.env
+    - ./engine.env
+    volumes:
+    - ./server:/screeps
+  engine-runner:
+    image: quay.io/ags131/screeps-server
+    command: screeps-engine-runner
+    env_file:
+    - ./common.env
+    - ./engine.env
+    volumes:
+    - ./server:/screeps
+  engine-processor:
+    image: quay.io/ags131/screeps-server
+    command: screeps-engine-processor
+    env_file:
+    - ./common.env
+    - ./engine.env
+    volumes:
+    - ./server:/screeps
+  mongo:
+    image: mongo
+    volumes:
+    - ./mongodb/db:/data/db 
+    - ./mongodb/configdb:/data/configdb
+  redis:
+    image: redis
+    volumes:
+    - ./redis:/data 

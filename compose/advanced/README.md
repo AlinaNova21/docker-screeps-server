@@ -1,0 +1,1 @@
+Edit `.env` to set your Steam Key. You can also configure other parameters there.
