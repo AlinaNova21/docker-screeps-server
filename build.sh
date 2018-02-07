@@ -1,10 +1,8 @@
-#!/bin/bash
-
-if [[ -z "$1" ]]; then
-  echo Please pass version to build
-  exit 1
-fi
-
-VER=$1
-
-docker build -t ags131/screeps-server:$VER -t ags131/screeps-server:latest . --build-arg SCREEPS_VERSION=$VER
+version=$(curl https://raw.githubusercontent.com/screeps/screeps/master/package.json | jq -r .version)
+git clone git@github.com:ags131/docker-screeps-server
+pushd docker-screeps-server
+sed -i 's/^ENV SCREEPS_VERSION.\*$/ENV SCREEPS_VERSION '$version'/i' Dockerfile
+git commit -a -m "Auto Update to screeps "$version
+git push origin master --tags
+popd
+rm -rf docker-screeps-server
