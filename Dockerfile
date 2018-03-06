@@ -22,7 +22,7 @@ ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
 	DRIVER_MODULE="@screeps/driver"
 WORKDIR /screeps
 COPY --from=0 /usr/local /usr/local
-RUN yarn add screeps@$SCREEPS_VERSION
+RUN yarn add screeps@"$SCREEPS_VERSION"
 RUN yarn add github:laverdet/isolated-vm
-ENTRYPOINT ["npx"]
+ENTRYPOINT ["npx","--harmony_sharedarraybuffer"]
 CMD ["screeps","start"]
