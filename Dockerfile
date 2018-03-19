@@ -1,16 +1,4 @@
-FROM ubuntu:16.04
-RUN apt-get update;\
-    apt-get install -y apt-utils;\
-    apt-get dist-upgrade -y;\
-    apt-get install -y curl unzip python build-essential git
-RUN curl -SLO "https://github.com/laverdet/node/archive/tailcall-backport.zip"
-RUN unzip "tailcall-backport.zip"
-WORKDIR /node-tailcall-backport
-RUN ./configure
-RUN make -j 4
-RUN make install 
-
-FROM ubuntu:16.04
+FROM node:8.10
 
 VOLUME /screeps
 WORKDIR /screeps
@@ -21,7 +9,6 @@ ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
 	STORAGE_PORT=21027 STORAGE_HOST=localhost \
 	DRIVER_MODULE="@screeps/driver"
 WORKDIR /screeps
-COPY --from=0 /usr/local /usr/local
 RUN yarn add screeps@"$SCREEPS_VERSION"
 RUN yarn add github:laverdet/isolated-vm
 ENTRYPOINT ["npx","--harmony_sharedarraybuffer"]
