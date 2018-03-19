@@ -2,7 +2,7 @@ FROM node:8.10-alpine
 WORKDIR /screeps
 RUN apk add --no-cache python make g++ git
 RUN yarn add screeps@"$SCREEPS_VERSION"
-RUN yarn add github:laverdet/isolated-vm
+RUN yarn add isolated-vm
 
 FROM node:8.10-alpine
 
