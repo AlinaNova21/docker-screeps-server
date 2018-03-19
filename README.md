@@ -3,8 +3,8 @@
 ## Setup
   
 ### Init
-1. If you have an existing server directory, cd into it and run the following, otherwise skip to step 2
-	`docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server@beta yarn install screeps@beta-<version> laverdet/isolated-vm`
+1. If you have an existing server directory, it likely will not work, 
+	create a new one with the steps below and reinstall your mods + copy db.json if applicable
 2. Create an empty folder and enter it
 3. Init your server directory: 
   ```docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server@beta screeps init```
