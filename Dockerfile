@@ -2,7 +2,7 @@ FROM node:8.10
 
 VOLUME /screeps
 WORKDIR /screeps
-ENV SCREEPS_VERSION 3.0.0-beta.5
+ENV SCREEPS_VERSION 
 ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
 	MODFILE=/screeps/mods.json GAME_PORT=21025 \
 	GAME_HOST=0.0.0.0 CLI_PORT=21026 CLI_HOST=0.0.0.0 \
