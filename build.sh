@@ -4,6 +4,5 @@ pushd docker-screeps-server
 sed -i 's/^ENV SCREEPS_VERSION.*$/ENV SCREEPS_VERSION '$version'/i' Dockerfile
 git commit -a -m "Auto Update to screeps "$version
 git push origin beta --tags
-bash
 popd
 rm -rf docker-screeps-server
