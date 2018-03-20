@@ -1,5 +1,5 @@
 FROM ags131/node:8.9.4-alpine-tailcall
-ENV SCREEPS_VERSION 3.0.0-beta.7
+ENV SCREEPS_VERSION 3.0.0-beta.6
 WORKDIR /screeps
 RUN apk add --no-cache python make g++ git
 RUN yarn add screeps@"$SCREEPS_VERSION" --ignore-engines
