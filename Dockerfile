@@ -1,10 +1,10 @@
-FROM ags131/node:8.10.0-alpine
+FROM ags131/node:8.9.4-alpine-tailcall
 ENV SCREEPS_VERSION 3.0.0-beta.6
 WORKDIR /screeps
 RUN apk add --no-cache python make g++ git
 RUN yarn add screeps@"$SCREEPS_VERSION"
 
-FROM ags131/node:8.10.0-alpine
+FROM ags131/node:8.9.4-alpine-tailcall
 VOLUME /screeps
 WORKDIR /screeps
 ENV SCREEPS_VERSION 3.0.0-beta.6
