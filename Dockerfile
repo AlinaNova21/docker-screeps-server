@@ -1,9 +1,9 @@
 FROM ags131/node:8.9.4-alpine-tailcall
-ENV SCREEPS_VERSION 3.0.0-beta.6
+ENV SCREEPS_VERSION 3.0.0-beta.7
 WORKDIR /screeps
 RUN apk add --no-cache python make g++ git
-RUN yarn add screeps@"$SCREEPS_VERSION"
-RUN yarn add isolated-vm
+RUN yarn add screeps@"$SCREEPS_VERSION" --ignore-engines
+RUN yarn add isolated-vm@1.3.1
 
 FROM ags131/node:8.9.4-alpine-tailcall
 
