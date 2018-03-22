@@ -15,5 +15,4 @@ ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
 WORKDIR /screeps
 #RUN apk add --no-cache git
 COPY --from=0 /screeps /screeps
-ENTRYPOINT ["npx","-n","--harmony_sharedarraybuffer"]
-CMD ["screeps","start"]
+CMD ["npx","screeps","start"]
