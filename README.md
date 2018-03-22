@@ -8,7 +8,7 @@
 2. Create an empty folder and enter it
 3. Init your server directory: 
 ```bash
-docker run --rm -it --entrypoint sh -v $PWD:/screeps quay.io/ags131/screeps-server:beta
+docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server:beta sh
 # npm install screeps@3.0.0-beta.8
 # npx screeps init
 # exit
@@ -26,7 +26,7 @@ Mods can be installed by running:
 
 ### CLI
 The CLI can be accessed by running:
-```docker exec -it screeps-server screeps cli```
+```docker exec -it screeps-server npx screeps cli```
 
 ## Stopping and starting the server
 Stop:
