@@ -7,7 +7,12 @@
 	create a new one with the steps below and reinstall your mods + copy db.json if applicable
 2. Create an empty folder and enter it
 3. Init your server directory: 
-  ```docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server@beta screeps init```
+```bash
+docker run --rm -it --entrypoint sh -v $PWD:/screeps quay.io/ags131/screeps-server:beta
+# npm install screeps@3.0.0-beta.8
+# npx screeps init
+# exit
+```
 
 ### First start
 1. Make sure you are in the server directory
