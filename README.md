@@ -17,12 +17,12 @@ docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server:beta sh
 ### First start
 1. Make sure you are in the server directory
 2. Start the Server:  
-```docker run -d --name screeps-server -v $PWD:/screeps -p 21025:21025 quay.io/ags131/screeps-server@beta```
+```docker run -d --name screeps-server -v $PWD:/screeps -p 21025:21025 quay.io/ags131/screeps-server:beta```
 3. Done! Your server should now be accessible.
 
 ### Mods
 Mods can be installed by running:
-```docker run --rm -v $PWD:/screeps quay.io/ags131/screeps-server@beta yarn add screepsmod-auth```
+```docker run --rm -v $PWD:/screeps quay.io/ags131/screeps-server:beta yarn add screepsmod-auth```
 
 ### CLI
 The CLI can be accessed by running:
