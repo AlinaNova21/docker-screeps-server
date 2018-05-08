@@ -4,7 +4,7 @@ WORKDIR /screeps
 #RUN apk add --no-cache python make g++ git
 RUN yarn add screeps@"$SCREEPS_VERSION"
 
-FROM ags131/node:8.10.0
+FROM node:8.11
 VOLUME /screeps
 WORKDIR /screeps
 ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
