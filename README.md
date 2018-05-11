@@ -1,15 +1,18 @@
 # Screeps Server
 
-## NOTE
-I moved the repo to quay.io for automated updates, the dockerhub version is now deprecated!
-
 ## Setup
   
 ### Init
 1. If you have an existing server directory, cd into it and skip to first start
 2. Create an empty folder and enter it
 3. Init your server directory: 
-  ```docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server screeps init```
+```bash
+docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server sh
+# yarn init -y
+# yarn install screeps
+# npx screeps init
+# exit
+```
 
 ### First start
 1. Make sure you are in the server directory
@@ -23,7 +26,7 @@ Mods can be installed by running:
 
 ### CLI
 The CLI can be accessed by running:
-```docker exec -it screeps-server screeps cli```
+```docker exec -it screeps-server npx screeps cli```
 
 ## Stopping and starting the server
 Stop:
@@ -41,5 +44,5 @@ Start:
 
 ## Launching a specific module
 For more advanced usage and more control over scaling, you can launch individual modules. Note that each module may have different environment variables needed to run.
-```docker run -d --name screeps-server-backend -v $PWD:/screeps quay.io/ags131/screeps-server screeps-backend```
+```docker run -d --name screeps-server-backend -v $PWD:/screeps quay.io/ags131/screeps-server@beta screeps-backend```
 
