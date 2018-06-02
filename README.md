@@ -9,7 +9,7 @@
 ```bash
 docker run --rm -it -v $PWD:/screeps quay.io/ags131/screeps-server sh
 # yarn init -y
-# yarn install screeps
+# yarn add screeps
 # npx screeps init
 # exit
 ```
