@@ -1,5 +1,5 @@
 FROM node:8.11.1-stretch
-ENV SCREEPS_VERSION 3.0.0
+ENV SCREEPS_VERSION 3.1.4
 WORKDIR /screeps
 RUN yarn add screeps@"$SCREEPS_VERSION"
 
