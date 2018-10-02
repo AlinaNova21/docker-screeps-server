@@ -13,13 +13,14 @@ function run_srv(){
 	exec npx screeps start
 }
 
-if [ "$1" = "init" ]; then
-	init_srv
-	run_srv
-fi
-
-if [ "$1" = "run" ]; then
-	run_srv
-fi
-
-exec "$@"
+case $1 in
+	init)
+		init_srv
+		;;
+	run)
+		run_srv
+		;;
+	*)
+		exec "$@"
+		;;
+esac
