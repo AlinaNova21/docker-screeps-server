@@ -3,9 +3,9 @@ set -e
 
 function init_srv(){
 	echo "===== SETTING UP SCREEPS ====="
-        yarn init -y
-        yarn add screeps
-        npx screeps init
+    yarn init -y
+    yarn add screeps
+    npx screeps init
 }
 
 function run_srv(){
