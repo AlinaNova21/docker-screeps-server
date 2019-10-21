@@ -1,9 +1,9 @@
-FROM node:8.11.1-stretch
+FROM node:10.16.3-stretch
 ENV SCREEPS_VERSION 3.3.0
 WORKDIR /screeps
 RUN yarn add screeps@"$SCREEPS_VERSION"
 
-FROM node:8.11.1-stretch
+FROM node:10.16.3-stretch
 VOLUME /screeps
 WORKDIR /screeps
 ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
