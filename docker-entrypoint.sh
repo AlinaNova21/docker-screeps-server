@@ -10,7 +10,11 @@ function init_srv(){
 
 function run_srv(){
 	cd /screeps
-	exec npx screeps start
+	if [-z $SERVER_PASSWORD ]; then
+		exec npx screeps start
+	else
+		exec npx screeps start --password $SERVER_PASSWORD
+	fi;
 }
 
 case $1 in
