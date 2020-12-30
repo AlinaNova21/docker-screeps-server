@@ -8,7 +8,7 @@ There are two different type how to start a screeps server.
 If you do not have an existing server directory, just start the Docker container with the command line argument `init`, and everything gets done for you.
 
 ```bash
-docker run -it --rm -v $PWD:/screeps eadword/screeps-server init
+docker run -it --rm -v $PWD:/screeps quay.io/ags131/screeps-server init
 ```
 
 Now it's all set to run the Screeps server.
@@ -19,7 +19,7 @@ If you have already a server directory (from previous installations) follow the 
 1. Make sure you are in the server directory
 2. Run the server
 ```bash
-docker run -d --name screeps-server -v $PWD:/screeps -p 21025:21025 eadword/screeps-server
+docker run -d --name screeps-server -v $PWD:/screeps -p 21025:21025 quay.io/ags131/screeps-server
 ```
 
 ## Managing the server
@@ -27,7 +27,7 @@ docker run -d --name screeps-server -v $PWD:/screeps -p 21025:21025 eadword/scre
 
 ### Mods
 Mods can be installed by running:
-```docker run --rm -v $PWD:/screeps eadword/screeps-server yarn add screepsmod-auth```
+```docker run --rm -v $PWD:/screeps quay.io/ags131/screeps-server yarn add screepsmod-auth```
 
 ### CLI
 The CLI can be accessed by running:
@@ -49,5 +49,5 @@ Start:
 
 ## Launching a specific module
 For more advanced usage and more control over scaling, you can launch individual modules. Note that each module may have different environment variables needed to run.
-```docker run -d --name screeps-server-backend -v $PWD:/screeps eadword/screeps-server@beta screeps-backend```
+```docker run -d --name screeps-server-backend -v $PWD:/screeps quay.io/ags131/screeps-server@beta screeps-backend```
 
