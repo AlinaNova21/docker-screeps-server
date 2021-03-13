@@ -1,5 +1,7 @@
 # Screeps Server
 
+# OUTDATED: [screeps-launcher](https://github.com/ags131/screeps-launcher) is now the recommended way of running a server
+
 There are two different type how to start a screeps server.
 * [without a world](#create-the-world)
 * [with a world already created](#running-the-server)
